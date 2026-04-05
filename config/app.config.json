@@ -38,9 +38,9 @@
       "ERC-8004"
     ],
     "socialMediaPosts": [],
-    "repoUrl": "",
-    "demoPlatform": "",
-    "demoUrl": "",
+    "repoUrl": "https://github.com/jngonzales/Hackathon",
+    "demoPlatform": "Vercel",
+    "demoUrl": "https://hackathon-five-alpha-71.vercel.app/",
     "additionalInfo": "",
     "media": {
       "coverImage": "",

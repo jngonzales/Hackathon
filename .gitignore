@@ -3,3 +3,5 @@ var/
 .env
 .env.*
 .codex/
+.openspec/
+.docs/

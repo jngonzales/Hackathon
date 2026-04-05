@@ -97,7 +97,9 @@ export async function loadAppConfig(options = {}) {
     throw new Error("storage.rootDir is required.");
   }
 
-  const rootDir = path.resolve(path.dirname(configPath), "..", rawConfig.storage.rootDir);
+  const rootDir = options.storageRootDir
+    ? path.resolve(options.storageRootDir)
+    : path.resolve(path.dirname(configPath), "..", rawConfig.storage.rootDir);
 
   return {
     configPath,

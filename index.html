@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OneDev Trading Agent</title>
+    <meta
+      name="description"
+      content="OneDev is a bounded AI trading agent demo for the AI Trading Agents hackathon, combining Kraken CLI execution boundaries with ERC-8004-style validation evidence."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-left"></div>
+      <div class="ambient ambient-right"></div>
+
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">AI Trading Agents Hackathon</p>
+          <h1>OneDev</h1>
+          <p class="lede">
+            A bounded trading-agent demo with explicit risk gates, Kraken CLI execution boundaries, and
+            linked validation artifacts for reviewer traceability.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-link" href="https://github.com/jngonzales/Hackathon" target="_blank" rel="noreferrer">
+              View Repository
+            </a>
+            <a class="secondary-link" href="./docs/submission-readiness-checklist.md" target="_blank" rel="noreferrer">
+              Read Submission Checklist
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <div class="panel-label">Live Verification</div>
+          <div class="panel-metric" id="hero-readiness">Loading</div>
+          <p class="panel-text" id="hero-summary">
+            The page is requesting a fresh report from the same verification path used by the local CLI.
+          </p>
+          <button class="panel-button" id="refresh-report" type="button">Refresh Report</button>
+        </aside>
+      </header>
+
+      <main class="content-grid">
+        <section class="card card-wide">
+          <div class="section-heading">
+            <p class="section-kicker">System Shape</p>
+            <h2>Agent Loop</h2>
+          </div>
+          <div class="pill-row">
+            <span class="pill">Market Snapshot Ingest</span>
+            <span class="pill">Threshold Strategy</span>
+            <span class="pill">Risk Approval</span>
+            <span class="pill">Kraken CLI Adapter</span>
+            <span class="pill">Evidence Journal</span>
+            <span class="pill">Submission Manifest</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-step">
+              <span class="step-index">01</span>
+              <div>
+                <h3>Observe</h3>
+                <p>Normalize market input into a bounded snapshot for the strategy loop.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <span class="step-index">02</span>
+              <div>
+                <h3>Decide</h3>
+                <p>Generate a buy, sell, or no-trade signal with rationale attached to the decision record.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <span class="step-index">03</span>
+              <div>
+                <h3>Constrain</h3>
+                <p>Enforce exposure, position-size, drawdown, and sell-size rules before any execution path.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <span class="step-index">04</span>
+              <div>
+                <h3>Trace</h3>
+                <p>Persist artifacts so each outcome can be traced back to its decision and policy context.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section-heading">
+            <p class="section-kicker">Execution</p>
+            <h2>Cycle Summary</h2>
+          </div>
+          <div class="stat-grid">
+            <div class="stat-box">
+              <span class="stat-label">Mode</span>
+              <strong id="execution-mode">Loading</strong>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">Approved Path</span>
+              <strong id="approved-outcome">Loading</strong>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">Execution Status</span>
+              <strong id="approved-status">Loading</strong>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">No-Trade Path</span>
+              <strong id="no-trade-outcome">Loading</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section-heading">
+            <p class="section-kicker">Trust Surface</p>
+            <h2>Artifact Evidence</h2>
+          </div>
+          <div class="artifact-meter">
+            <div class="artifact-total" id="artifact-total">0</div>
+            <p>validation artifacts generated by the verification loop</p>
+          </div>
+          <ul class="list" id="artifact-types">
+            <li>Loading verification artifacts...</li>
+          </ul>
+        </section>
+
+        <section class="card card-tall">
+          <div class="section-heading">
+            <p class="section-kicker">Submission Status</p>
+            <h2>Blocking Items</h2>
+          </div>
+          <div class="blocking-columns">
+            <div>
+              <h3>Required Fields</h3>
+              <ul class="list" id="missing-required">
+                <li>Loading required items...</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Hackathon Compliance</h3>
+              <ul class="list" id="missing-hackathon">
+                <li>Loading compliance items...</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="card card-tall">
+          <div class="section-heading">
+            <p class="section-kicker">Checklist</p>
+            <h2>Docs Alignment</h2>
+          </div>
+          <div class="checklist" id="docs-checklist">
+            <div class="check-row pending">
+              <span>Loading hackathon checklist...</span>
+              <strong>...</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="card card-wide">
+          <div class="section-heading">
+            <p class="section-kicker">Deployment Notes</p>
+            <h2>What This Demo Is Showing</h2>
+          </div>
+          <div class="note-grid">
+            <article>
+              <h3>What works now</h3>
+              <p>
+                This site reads a fresh verification report from the project runtime and shows the current readiness
+                state, evidence summary, and outcome trace checks.
+              </p>
+            </article>
+            <article>
+              <h3>What still needs work</h3>
+              <p>
+                Submission readiness remains blocked until demo media, deployment details, Early Surge registration,
+                public progress links, and any truthful ERC-8004 completion signals are added to config.
+              </p>
+            </article>
+            <article>
+              <h3>Kraken track reality</h3>
+              <p>
+                The repo is JavaScript, but the execution boundary is built around Kraken CLI. The current deployment is
+                presenting the architecture and live verification state, not running live trading from Vercel.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
