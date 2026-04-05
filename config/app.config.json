@@ -1,0 +1,99 @@
+{
+  "agent": {
+    "name": "OneDev",
+    "strategyMode": "single-strategy",
+    "identityRegistry": "erc-8004"
+  },
+  "execution": {
+    "mode": "simulation",
+    "adapter": "kraken-cli",
+    "pollIntervalMs": 60000,
+    "allowCommandExecution": false,
+    "commandPath": "kraken-cli"
+  },
+  "strategy": {
+    "symbol": "BTC/USD",
+    "buyThresholdPct": -2,
+    "sellThresholdPct": 2,
+    "orderSizeUsd": 100
+  },
+  "risk": {
+    "maxPositionSizeUsd": 250,
+    "maxPortfolioExposureUsd": 1000,
+    "maxDrawdownPct": 8
+  },
+  "submission": {
+    "eventName": "AI Trading Agents",
+    "track": "combined",
+    "projectTitle": "OneDev",
+    "shortDescription": "Solo AI trading agent using Kraken CLI and ERC-8004 validation artifacts.",
+    "description": "OneDev is a solo AI trading agent that evaluates market conditions, applies explicit risk checks, executes bounded trades, and emits linked validation artifacts for transparent review.",
+    "submissionType": "project",
+    "categories": [],
+    "tracks": [
+      "combined"
+    ],
+    "technologies": [
+      "Kraken CLI",
+      "ERC-8004"
+    ],
+    "socialMediaPosts": [],
+    "repoUrl": "",
+    "demoPlatform": "",
+    "demoUrl": "",
+    "additionalInfo": "",
+    "media": {
+      "coverImage": "",
+      "demoVideo": "",
+      "presentation": ""
+    },
+    "narrative": {
+      "elevatorPitch": "OneDev is a bounded AI trading agent for combined Kraken and ERC-8004 evaluation.",
+      "problemStatement": "Autonomous trading agents need verifiable trust, explicit risk controls, and a reviewable execution trail.",
+      "solutionSummary": "OneDev combines market-driven execution, risk gating, and linked validation artifacts in a single transparent workflow.",
+      "demoFlow": [
+        "Load a fresh market snapshot and evaluate the signal.",
+        "Show risk approval or rejection before execution.",
+        "Show execution outcome and generated validation artifacts.",
+        "Show reviewer trace and submission readiness output."
+      ],
+      "differentiators": [
+        "Bounded trade execution with explicit no-trade handling.",
+        "Linked decision, risk, execution, and evidence records.",
+        "Submission-first structure for combined-track review."
+      ]
+    },
+    "presentation": {
+      "outline": [
+        "Problem and hackathon fit",
+        "Architecture and decision loop",
+        "Strategy, risk, and execution behavior",
+        "Validation artifacts and reviewer trace",
+        "Demo and next steps"
+      ]
+    },
+    "hackathonCompliance": {
+      "earlySurge": {
+        "registered": false,
+        "projectUrl": ""
+      },
+      "kraken": {
+        "buildInPublicLinks": [],
+        "readOnlyAuditReady": false
+      },
+      "erc8004": {
+        "identityRegistered": false,
+        "reputationTrackingEnabled": false,
+        "capitalSandboxEnabled": false,
+        "riskRouterEnabled": false
+      }
+    },
+    "krakenVerification": {
+      "apiKey": "",
+      "accountId": ""
+    }
+  },
+  "storage": {
+    "rootDir": "var"
+  }
+}

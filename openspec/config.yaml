@@ -1,0 +1,33 @@
+schema: spec-driven
+
+context: |
+  Domain: AI trading agent hackathon project.
+  Primary goal: build a combined Kraken + ERC-8004 submission for the AI Trading Agents event running March 30, 2026 through April 12, 2026.
+  Current repo state: planning-first repository with hackathon source docs in docs/ and OpenSpec artifacts in openspec/.
+  Product expectations:
+  - The project must demonstrate a real financial function, not a static concept demo.
+  - The agent should operate through a bounded decision loop: market input, strategy evaluation, risk gating, execution or no-trade, and evidence capture.
+  - Trust and validation matter as much as trading behavior. Preserve identity metadata, decision rationale, risk checks, and execution outcomes as reviewable artifacts.
+  - Submission readiness is a first-class concern. Plan for required metadata, media assets, repo link, demo URL, and optional Kraken verification fields.
+  Planning conventions:
+  - Prefer minimal, implementation-ready scope over speculative platform design.
+  - Default to simulated or paper-safe execution paths before live trading assumptions.
+  - Keep requirements testable and aligned with demoability, auditability, and judging readiness.
+
+rules:
+  proposal:
+    - Keep the proposal focused on why the change matters for hackathon execution, trust, or submission readiness.
+    - State whether the change targets Kraken execution, ERC-8004 trust requirements, or a combined-track path.
+    - Prefer concrete capabilities over aspirational feature lists.
+  design:
+    - Include decisions for execution mode, risk controls, evidence capture, and submission packaging when relevant.
+    - Call out assumptions explicitly when the docs do not define a technical detail.
+    - Favor architectures that can be delivered quickly and demonstrated clearly.
+  specs:
+    - Every requirement must be testable with concrete WHEN/THEN scenarios.
+    - Use normative language that defines bounded agent behavior, not generic product goals.
+    - Include requirements for no-trade, rejection, and failure paths when the capability touches execution or validation.
+  tasks:
+    - Order tasks so a simulated end-to-end flow exists before live or external integrations.
+    - Keep tasks small enough to complete in one focused session.
+    - Include verification and submission-readiness tasks, not only implementation tasks.

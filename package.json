@@ -1,0 +1,15 @@
+{
+  "name": "hackathon-trading-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Skeleton for a combined Kraken and ERC-8004 trading agent submission.",
+  "scripts": {
+    "bootstrap": "node src/index.js",
+    "verify": "node src/verify.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
